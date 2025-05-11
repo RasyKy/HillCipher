@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from hill_cipher_core import encrypt, decrypt
+from backend.hill_cipher import encrypt, decrypt
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://localhost:5175"}})
