@@ -68,4 +68,4 @@ def decrypt(ciphertext, key_matrix, alphabet_type='A0_26'):
     
     text_matrix = text_to_matrix(ciphertext, size, alphabet_type)
     result = np.dot(text_matrix, matrix_inv) % len(char_to_int)
-    return matrix_to_text(result)
+    return matrix_to_text(result, alphabet_type)
