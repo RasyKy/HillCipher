@@ -14,6 +14,7 @@ def cipher_view(request):
         matrix_data = data.get('matrix')
         input_text = data.get('text', '')
         mode = data.get('mode', 'encrypt')  # or 'decrypt'
+        alphabet_type = data.get('alphabet', 'A0_26')
 
         try:
             matrix = np.array(matrix_data, dtype=int)
@@ -23,9 +24,9 @@ def cipher_view(request):
             return JsonResponse({'error': 'Invalid matrix'}, status=400)
 
         if mode == 'encrypt':
-            result = encrypt(input_text, matrix)
+            result = encrypt(input_text, matrix, alphabet_type)
         elif mode == 'decrypt':
-            result = decrypt(input_text, matrix)
+            result = decrypt(input_text, matrix, alphabet_type)
         else:
             result = "Invalid mode"
 
