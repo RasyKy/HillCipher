@@ -14,7 +14,7 @@ export default function DecryptSection({
     };
 
   return (
-    <div className="w-60 space-y-2 text-left max-w-120">
+    <div className="w-120 space-y-2 text-left max-w-120">
       <h2 className="text-3xl font-bold">Hill Decoder</h2>
 
       <div>
@@ -89,10 +89,10 @@ export default function DecryptSection({
         </div>
 
         <div className="space-y-1 mt-2 text-sm mb-5">
-          <div><input type="radio" name="alphabet-dec" value="A0_26" checked={alphabetOption === 'A0_26'} onChange={(e) => setAlphabetOption(e.target.value)} /> Alphabet (26 let. A=0)</div>
-          <div><input type="radio" name="alphabet-dec" value="A1_26" checked={alphabetOption === 'A1_26'} onChange={(e) => setAlphabetOption(e.target.value)} /> Alphabet (26 let. A=1)</div>
-          <div><input type="radio" name="alphabet-dec" value="A0_27" checked={alphabetOption === 'A0_27'} onChange={(e) => setAlphabetOption(e.target.value)} /> Alphabet (27 char. A=0)</div>
-          <div><input type="radio" name="alphabet-dec" value="A1_27" checked={alphabetOption === 'A1_27'} onChange={(e) => setAlphabetOption(e.target.value)} /> Alphabet (27 char. A=1)</div>
+          <div><input type="radio" name="alphabet-dec" value="A0_26" checked={alphabetOption === 'A0_26'} onChange={(e) => setAlphabetOption(e.target.value)} /> Alphabet (26 let. A=0) ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+          <div><input type="radio" name="alphabet-dec" value="A1_26" checked={alphabetOption === 'A1_26'} onChange={(e) => setAlphabetOption(e.target.value)} /> Alphabet (26 let. A=1) ZABCDEFGHIJKLMNOPQRSTUVWXY</div>
+          <div><input type="radio" name="alphabet-dec" value="A0_27" checked={alphabetOption === 'A0_27'} onChange={(e) => setAlphabetOption(e.target.value)} /> Alphabet (27 char. A=0) ABCDEFGHIJKLMNOPQRSTUVWXYZ_</div>
+          <div><input type="radio" name="alphabet-dec" value="A1_27" checked={alphabetOption === 'A1_27'} onChange={(e) => setAlphabetOption(e.target.value)} /> Alphabet (27 char. A=1) _ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
         </div>
 
         <button onClick={handleDecrypt} className="bg-[#0891b2] text-white px-6 py-1 mt-2">▶ Decrypt</button>

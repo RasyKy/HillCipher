@@ -11,7 +11,7 @@ function EncryptSection({
   };
 
   return (
-    <div className="w-60 space-y-2 text-left">
+    <div className="w-120 space-y-2 text-left max-w-120">
       <h2 className="text-3xl font-bold">Hill Encoder</h2>
       <div>
         <label className="block text-xl font-semibold mb-2">

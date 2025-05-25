@@ -1,9 +1,9 @@
 function AlphabetOptions({ alphabetOption, setAlphabetOption, namePrefix }) {
     const options = [
-      { value: 'A0_26', label: 'Alphabet (26 let. A=0)' },
-      { value: 'A1_26', label: 'Alphabet (26 let. A=1)' },
-      { value: 'A0_27', label: 'Alphabet (27 char. A=0)' },
-      { value: 'A1_27', label: 'Alphabet (27 char. A=1)' },
+      { value: 'A0_26', label: 'Alphabet (26 let. A=0) ABCDEFGHIJKLMNOPQRSTUVWXYZ' },
+      { value: 'A1_26', label: 'Alphabet (26 let. A=1) ZABCDEFGHIJKLMNOPQRSTUVWXY' },
+      { value: 'A0_27', label: 'Alphabet (27 char. A=0) ABCDEFGHIJKLMNOPQRSTUVWXYZ_' },
+      { value: 'A1_27', label: 'Alphabet (27 char. A=1) _ABCDEFGHIJKLMNOPQRSTUVWXYZ' },
     ];
   
     return (
