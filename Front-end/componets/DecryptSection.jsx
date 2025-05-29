@@ -1,6 +1,4 @@
 import React from 'react';
-import MatrixInput from './MatrixInput';
-import AlphabetOptions from './AlphabetOptions';
 
 export default function DecryptSection({
     ciphertext, setCiphertext, keyMatrix, updateMatrix,

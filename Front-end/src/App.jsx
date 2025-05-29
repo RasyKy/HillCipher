@@ -3,6 +3,8 @@ import axios from 'axios';
 import EncryptSection from '../componets/EncryptSection';
 import DecryptSection from '../componets/DecryptSection';
 import Abouts from '../componets/abouts';
+import Totur from '../componets/totur'
+import AboutUs from '../componets/aboutus'
 
 export default function App() {
   const [plaintext, setPlaintext] = useState('');
@@ -106,35 +108,53 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center flex-col mt-10 xl:mt-0 bg-[#fffef6] text-[#0891b2] font-mono p-4 md:p-10">
-      <h1 className="text-4xl md:text-6xl font-bold text-center mb-10">Hill Cipher</h1>
-      <div className="flex flex-col xl:flex-row gap-8 justify-center xl:gap-x-20">
-        <EncryptSection
-          plaintext={plaintext}
-          setPlaintext={setPlaintext}
-          keyMatrix={keyMatrix}
-          updateMatrix={updateMatrix}
-          handleEncrypt={handleEncrypt}
-          encryptResult={encryptResult}
-          alphabetOption={alphabetOption}
-          setAlphabetOption={setAlphabetOption}
-          matrixSize={matrixSize}
-          setMatrixSize={handleMatrixSizeChange}
-        />
-        <DecryptSection
-          ciphertext={ciphertext}
-          setCiphertext={setCiphertext}
-          keyMatrix={keyMatrix}
-          updateMatrix={updateMatrix}
-          handleDecrypt={handleDecrypt}
-          decryptResult={decryptResult}
-          alphabetOption={alphabetOption}
-          setAlphabetOption={setAlphabetOption}
-          matrixSize={matrixSize}
-          setMatrixSize={handleMatrixSizeChange}
-        />
-        <Abouts />
-      </div>
+    
+    <div className="min-h-screen flex flex-col items-center mt-10 xl:mt-0 bg-[#F1F0E8] text-[#0891b2] font-mono p-4 md:p-10 font-Jersey">
+    <h1 className="text-4xl md:text-6xl font-bold text-center mb-10">Hill Cipher</h1>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 justify-center">
+
+    {/* Encrypt Section */}
+    <div className="w-full lg:w-1/3 flex justify-center">
+      <EncryptSection
+        plaintext={plaintext}
+        setPlaintext={setPlaintext}
+        keyMatrix={keyMatrix}
+        updateMatrix={updateMatrix}
+        handleEncrypt={handleEncrypt}
+        encryptResult={encryptResult}
+        alphabetOption={alphabetOption}
+        setAlphabetOption={setAlphabetOption}
+        matrixSize={matrixSize}
+        setMatrixSize={handleMatrixSizeChange}
+      />
     </div>
+
+    {/* Decrypt Section */}
+    <div className="w-full lg:w-1/3 flex justify-center">
+      <DecryptSection
+        ciphertext={ciphertext}
+        setCiphertext={setCiphertext}
+        keyMatrix={keyMatrix}
+        updateMatrix={updateMatrix}
+        handleDecrypt={handleDecrypt}
+        decryptResult={decryptResult}
+        alphabetOption={alphabetOption}
+        setAlphabetOption={setAlphabetOption}
+        matrixSize={matrixSize}
+        setMatrixSize={handleMatrixSizeChange}
+      />
+    </div>
+
+    {/* About Section */}
+    <div className="w-full lg:w-1/3 flex justify-center">
+      <Abouts />
+    </div>
+  </div>
+</div>
+<Totur/>
+<AboutUs/>
+    </div>
+  
   );
 }
