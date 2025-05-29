@@ -5,4 +5,5 @@ from .views import cipher_view
 
 urlpatterns = [
     path('api/cipher/', cipher_view, name='cipher'),
+    path('api/test/', test_view, name='test'),
 ]
