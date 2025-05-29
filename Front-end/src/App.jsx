@@ -79,7 +79,7 @@ export default function App() {
   const handleEncrypt = async () => {
     try {
       const matrix = convertToMatrix(keyMatrix, matrixSize);
-      const res = await axios.post('http://127.0.0.1:8000/api/cipher/', {
+      const res = await axios.post('https://hillcipher-18kq.onrender.com/api/cipher/', {
         text: plaintext,
         matrix: matrix,
         mode: 'encrypt',
@@ -94,7 +94,7 @@ export default function App() {
   const handleDecrypt = async () => {
     try {
       const matrix = convertToMatrix(keyMatrix, matrixSize);
-      const res = await axios.post('http://127.0.0.1:8000/api/cipher/', {
+      const res = await axios.post('https://hillcipher-18kq.onrender.com/api/cipher/', {
         text: ciphertext,
         matrix: matrix,
         mode: 'decrypt',
