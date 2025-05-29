@@ -26,7 +26,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", "unsafe-default-key")
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = os.getenv("DEBUG", "False") == "True"
 DEBUG = True
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "hillcipher-18kq.onrender.com,localhost").split(",")
+ALLOWED_HOSTS = ['hillcipher-18kq.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
