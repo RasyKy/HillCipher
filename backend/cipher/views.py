@@ -57,3 +57,7 @@ def cipher_view(request):
             return JsonResponse({'error': f'Cipher error: {str(e)}'}, status=400)
     
     return JsonResponse({'error': 'Method not allowed'}, status=405)
+    
+def test_view(request):
+    print("Test view called!")
+    return JsonResponse({'message': 'Test successful', 'method': request.method})
