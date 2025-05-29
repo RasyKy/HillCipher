@@ -8,30 +8,26 @@ from .utils import encrypt, decrypt
 
 @csrf_exempt
 def cipher_view(request):
+    print(f"Method: {request.method}")
+    
     if request.method == 'POST':
         try:
-            # Log the raw request for debugging
-            logger.info(f"Request body: {request.body}")
-            logger.info(f"Content type: {request.content_type}")
-            
+            print(f"Request body: {request.body}")
             data = json.loads(request.body)
-            logger.info(f"Parsed data: {data}")
+            print(f"Parsed data: {data}")
             
             matrix_data = data.get('matrix')
             input_text = data.get('text', '')
             mode = data.get('mode', 'encrypt')
             alphabet_type = data.get('alphabet', 'A0_26')
             
-            logger.info(f"Matrix data: {matrix_data}")
-            logger.info(f"Text: {input_text}")
-            logger.info(f"Mode: {mode}")
-            logger.info(f"Alphabet: {alphabet_type}")
+            print(f"Matrix: {matrix_data}, Text: {input_text}, Mode: {mode}, Alphabet: {alphabet_type}")
             
         except json.JSONDecodeError as e:
-            logger.error(f"JSON decode error: {e}")
+            print(f"JSON decode error: {e}")
             return JsonResponse({'error': f'Invalid JSON: {str(e)}'}, status=400)
         except Exception as e:
-            logger.error(f"Request parsing error: {e}")
+            print(f"Request parsing error: {e}")  # Changed from logger.error
             return JsonResponse({'error': f'Request error: {str(e)}'}, status=400)
 
         try:
@@ -39,7 +35,7 @@ def cipher_view(request):
             if matrix.shape[0] != matrix.shape[1]:
                 return JsonResponse({'error': 'Key matrix must be square'}, status=400)
         except Exception as e:
-            logger.error(f"Matrix error: {e}")
+            print(f"Matrix error: {e}")  # Changed from logger.error
             return JsonResponse({'error': f'Invalid matrix: {str(e)}'}, status=400)
 
         try:
@@ -53,7 +49,7 @@ def cipher_view(request):
             return JsonResponse({'result': result})
             
         except Exception as e:
-            logger.error(f"Cipher operation error: {e}")
+            print(f"Cipher operation error: {e}")  # Changed from logger.error
             return JsonResponse({'error': f'Cipher error: {str(e)}'}, status=400)
     
     return JsonResponse({'error': 'Method not allowed'}, status=405)
