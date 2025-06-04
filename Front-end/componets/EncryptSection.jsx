@@ -3,7 +3,7 @@ import AlphabetOptions from "./AlphabetOptions";
 function EncryptSection({
     plaintext, setPlaintext, keyMatrix, updateMatrix,
     handleEncrypt, encryptResult, alphabetOption, setAlphabetOption,
-    matrixSize, setMatrixSize
+    matrixSize, setMatrixSize, handleMatrixResize
 }) {
   // Calculate grid class based on matrix size
   const getGridCols = () => {
@@ -11,7 +11,7 @@ function EncryptSection({
   };
 
   return (
-    <div className="w-120 space-y-2 text-left max-w-120">
+    <div className="w-full max-w-md sm:max-w-lg md:max-w-xl space-y-2 text-left">
       <h2 className="text-3xl font-bold">Hill Encoder</h2>
       <div>
         <label className="block text-xl font-semibold mb-2">
