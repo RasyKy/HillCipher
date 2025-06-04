@@ -12,7 +12,7 @@ export default function DecryptSection({
     };
 
   return (
-    <div className="w-120 space-y-2 text-left max-w-120">
+    <div className="w-full max-w-md sm:max-w-lg md:max-w-xl space-y-2 text-left">
       <h2 className="text-3xl font-bold">Hill Decoder</h2>
 
       <div>
@@ -55,7 +55,6 @@ export default function DecryptSection({
               3x3
             </label>
           </div>
-
 
           <div className="grid grid-cols-2 gap-x-3 xl:gap-x-0 gap-y-2 mt-2 max-w-fit">
               <button 
